@@ -150,6 +150,10 @@ table th {
     flex: 1;
     margin-right: 10px;
 }
+.past-due {
+    background-color: #d4adb0; /* Light red background */
+    color: #721c24; /* Dark red text */
+}
 
 @media (max-width: 768px) {
     .row {

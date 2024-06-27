@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
     loadTasksFromLocalStorage();
 });
@@ -16,6 +14,8 @@ function loadTasksFromLocalStorage() {
     tasks.completed.forEach((task, index) => {
         addTaskRow(completedTableBody, task, index + 1, true);
     });
+
+    checkPastDueTasks();
 }
 
 function saveTasksToLocalStorage() {
@@ -64,6 +64,7 @@ function addTask() {
 
     addTaskRow(pendingTableBody, newTask, rowCount + 1);
     saveTasksToLocalStorage();
+    checkPastDueTasks();
 
     document.getElementById('taskPerson').value = '';
     document.getElementById('taskDescription').value = '';
@@ -103,6 +104,8 @@ function addTaskRow(tableBody, task, index, isCompleted = false) {
         pendingCheckbox.checked = false;
         completedCheckbox.checked = true;
     }
+
+    checkPastDueTask(row, task.dueDate);
 }
 
 function moveTask(row, toCompleted) {
@@ -116,6 +119,7 @@ function moveTask(row, toCompleted) {
     renumberRows(targetTableBody);
 
     saveTasksToLocalStorage();
+    checkPastDueTasks();
 }
 
 function renumberRows(tableBody) {
@@ -123,4 +127,32 @@ function renumberRows(tableBody) {
     rows.forEach((row, index) => {
         row.cells[0].textContent = index + 1;
     });
+}
+
+function checkPastDueTasks() {
+    const rows = document.querySelectorAll('#pendingTableBody tr');
+    rows.forEach(row => {
+        const dueDate = row.cells[2].querySelector('input').value;
+        checkPastDueTask(row, dueDate);
+    });
+}
+
+function checkPastDueTask(row, dueDate) {
+    const currentDate = new Date();
+    const dueDateTime = new Date(dueDate);
+    if (dueDateTime < currentDate) {
+        row.classList.add('past-due');
+    } else {
+        row.classList.remove('past-due');
+    }
+}
+
+function disableButtons() {
+    document.querySelectorAll('button').forEach(btn => btn.disabled = true);
+}
+
+function enableButtonsAfterDelay() {
+    setTimeout(() => {
+        document.querySelectorAll('button').forEach(btn => btn.disabled = false);
+    }, 2000);
 }
