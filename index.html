@@ -3,277 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Styles/test.css">
+    <link rel="stylesheet" href="Styles/style.css">
+    <script src="Scripts/script.js" ></script>
     <title>To-Do-List</title>
 </head>
 <body>
     <h1 class="Title">To-Do-List</h1>
+    
     <div class="container">
+        <div class="task-form">
+            <div class="assign-person">
+                <input type="text" id="taskPerson" placeholder="Assign to">
+                <button id="addPerson"><i class="fas fa-plus"></i></button>
+            </div>
+            <button id="addTaskButton" onclick="addTask()">Add Tasks</button>
+        </div>
+        <div class="task-list" id="taskList"></div>
+    </div>
+
+    <div class="page">
         <div class="row">
-            <table class="MondayTable">
-                <thead>
-                    <tr>
-                        <th>Monday</th>
-                        <th class="Pending">
-                            <h6>Pending</h6>
-                            <input type="checkbox">
-                        </th>
-                        <th class="Complete">
-                            <h6>Completed</h6>
-                            <input type="checkbox">
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-             
-            <table class="TuesdayTable">
-                <thead>
-                    <tr>
-                        <th>Tuesday</th>
-                        <th class="Pending">
-                            <h6>Pending</h6>
-                            <input type="checkbox">
-                        </th>
-                        <th class="Complete">
-                            <h6>Completed</h6>
-                            <input type="checkbox">
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <h2>Monday</h2>
+                <table class="dayTable">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>To-Do</th>
+                            <th>Due Date</th>
+                            <th class="small-col">Pending</th>
+                            <th class="small-col">Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-container">
+                <h2>Tuesday</h2>
+                <table class="dayTable">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>To-Do</th>
+                            <th>Due Date</th>
+                            <th class="small-col">Pending</th>
+                            <th class="small-col">Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
        
         <div class="row">
-            <table class="WedTable">
-                <thead>
-                    <tr>
-                        <th>Wedensday</th>
-                        <th class="Pending">
-                            <h6>Pending</h6>
-                            <input type="checkbox" title="Pending">
-                        </th>
-                        <th class="Complete">
-                            <h6>Completed</h6>
-                            <input type="checkbox" title="Completed">
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <h2>Wednesday</h2>
+                <table class="dayTable">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>To-Do</th>
+                            <th>Due Date</th>
+                            <th class="small-col">Pending</th>
+                            <th class="small-col">Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
              
-            <table class="ThurdayTable">
-                <thead>
-                    <tr>
-                        <th>Thursday</th>
-                        <th class="Pending">
-                            <h6>Pending</h6>
-                            <input type="checkbox">
-                        </th>
-                        <th class="Complete">
-                            <h6>Completed</h6>
-                            <input type="checkbox">
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <h2>Thursday</h2>
+                <table class="dayTable">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>To-Do</th>
+                            <th>Due Date</th>
+                            <th class="small-col">Pending</th>
+                            <th class="small-col">Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <!---->
-        
         <div class="row">
-            <table class="FridayTable">
-                <thead>
-                    <tr>
-                        <th>Friday</th>
-                        <th class="Pending">
-                            <h6>Pending</h6>
-                            <input type="checkbox" title="Pending">
-                        </th>
-                        <th class="Complete">
-                            <h6>Completed</h6>
-                            <input type="checkbox" title="Completed">
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <h2>Friday</h2>
+                <table class="dayTable">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>To-Do</th>
+                            <th>Due Date</th>
+                            <th class="small-col">Pending</th>
+                            <th class="small-col">Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
              
-            <table class="SatdayTable">
-                <thead>
-                    <tr>
-                        <th>Saturday</th>
-                        <th class="Pending">
-                            <h6>Pending</h6>
-                            <input type="checkbox">
-                        </th>
-                        <th class="Complete">
-                            <h6>Completed</h6>
-                            <input type="checkbox">
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <h2>Saturday</h2>
+                <table class="dayTable">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>To-Do</th>
+                            <th>Due Date</th>
+                            <th class="small-col">Pending</th>
+                            <th class="small-col">Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><input type="text" placeholder=""></td>
+                            <td><input type="date"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                            <td class="checkbox-cell"><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+    
 </body>
 </html>
