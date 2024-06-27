@@ -66,14 +66,13 @@ table th {
     text-align: center;
 }
 
-
 .container {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    height: 150px;
+    width: 300px;
+    height: 200px;
 }
 
 .task-form {
@@ -82,7 +81,7 @@ table th {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    padding: 50px;
+    padding: 20px;
 }
 
 .task-form input,
@@ -93,17 +92,20 @@ table th {
     border-radius: 3px;
 }
 
-.assign-person {
+.assign-person,
+.task-description {
     display: flex;
     align-items: center;
 }
 
-.assign-person input {
+.assign-person input,
+.task-description input {
     flex: 1;
     margin-right: 5px;
 }
 
-.assign-person button {
+.assign-person button,
+.task-description button {
     padding: 16px;
     background-color: #7a91aa;
     color: #fff;
@@ -112,7 +114,8 @@ table th {
     cursor: pointer;
 }
 
-.assign-person button i {
+.assign-person button i,
+.task-description button i {
     font-size: 14px;
 }
 
