@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/style.css">
+    <script src="Scripts/script.js" defer></script>
+    <title>To-Do-List</title>
+</head>
+<body>
+    <h1 class="Title">To-Do-List</h1>
+    
+    <div class="container">
+        <div class="task-form">
+            <div class="assign-person">
+                <input type="text" id="taskPerson" placeholder="Assign to">
+            </div>
+            <div class="task-description">
+                <input type="text" id="taskDescription" placeholder="Task description">
+            </div>
+            <button id="addTaskButton" class="button" onclick="addTask()">Add Task</button>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="row">
+            <div class="table-container">
+                <h2>Pending Tasks</h2>
+                <table class="dayTable" id="pendingTable">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>To-Do</th>
+                            <th>Due Date</th>
+                            <th class="small-col">Pending</th>
+                            <th class="small-col">Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pendingTableBody"></tbody>
+                </table>
+            </div>
+            
+            <div class="table-container">
+                <h2>Completed Tasks</h2>
+                <table class="dayTable" id="completedTable">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>To-Do</th>
+                            <th>Due Date</th>
+                            <th class="small-col">Pending</th>
+                            <th class="small-col">Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody id="completedTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+v
