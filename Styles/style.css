@@ -152,7 +152,7 @@ table th {
 }
 .past-due {
     background-color: #d4adb0; 
-    color: #721c24; 
+    color: hsl(354, 40%, 60%); 
 }
 
 @media (max-width: 768px) {
