@@ -42,7 +42,7 @@ function addTask() {
             <input type="checkbox" class="completed">
         </div>
     `;
-    taskList.appendChild(taskDiv);
+   
 }
 
 function disableButtons() {
