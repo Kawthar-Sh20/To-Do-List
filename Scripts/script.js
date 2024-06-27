@@ -31,12 +31,13 @@ function getTasksFromTable(tableBody) {
     const tasks = [];
 
     rows.forEach(row => {
-        const todo = row.cells[1].querySelector('input').value;
-        const dueDate = row.cells[2].querySelector('input').value;
-        const pending = row.cells[3].querySelector('input').checked;
-        const completed = row.cells[4].querySelector('input').checked;
+        const assignedTo = row.cells[1].querySelector('input').value;
+        const todo = row.cells[2].querySelector('input').value;
+        const dueDate = row.cells[3].querySelector('input').value;
+        const pending = row.cells[4].querySelector('input').checked;
+        const completed = row.cells[5].querySelector('input').checked;
 
-        tasks.push({ todo, dueDate, pending, completed });
+        tasks.push({ assignedTo, todo, dueDate, pending, completed });
     });
 
     return tasks;
@@ -56,6 +57,7 @@ function addTask() {
     const rowCount = pendingTableBody.rows.length;
 
     const newTask = {
+        assignedTo: taskPersonInput,
         todo: taskDescriptionInput,
         dueDate: taskDueDateInput,
         pending: true,
@@ -75,6 +77,7 @@ function addTaskRow(tableBody, task, index, isCompleted = false) {
     const row = document.createElement('tr');
     row.innerHTML = `
         <td>${index}</td>
+        <td><input type="text" value="${task.assignedTo}" placeholder=""></td>
         <td><input type="text" value="${task.todo}" placeholder=""></td>
         <td><input type="date" value="${task.dueDate}"></td>
         <td class="checkbox-cell"><input type="checkbox" class="pending-checkbox" ${task.pending ? 'checked' : ''}></td>
@@ -132,7 +135,7 @@ function renumberRows(tableBody) {
 function checkPastDueTasks() {
     const rows = document.querySelectorAll('#pendingTableBody tr');
     rows.forEach(row => {
-        const dueDate = row.cells[2].querySelector('input').value;
+        const dueDate = row.cells[3].querySelector('input').value;
         checkPastDueTask(row, dueDate);
     });
 }
