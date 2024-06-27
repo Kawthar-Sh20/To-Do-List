@@ -9,6 +9,7 @@ body {
 
 .Title {
     margin-top: 20px;
+    
 }
 
 .page {
@@ -151,8 +152,8 @@ table th {
     margin-right: 10px;
 }
 .past-due {
-    background-color: #d4adb0; 
-    color: hsl(354, 40%, 60%); 
+    background-color:lightgray; 
+    color: lightgray;
 }
 
 @media (max-width: 768px) {
