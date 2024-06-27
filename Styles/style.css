@@ -151,8 +151,8 @@ table th {
     margin-right: 10px;
 }
 .past-due {
-    background-color: #d4adb0; /* Light red background */
-    color: #721c24; /* Dark red text */
+    background-color: #d4adb0; 
+    color: #721c24; 
 }
 
 @media (max-width: 768px) {
